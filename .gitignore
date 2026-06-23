@@ -1,0 +1,57 @@
+# Git 忽略文件
+# 收货信息登记 Skill
+
+# === Python ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# === 虚拟环境 ===
+venv/
+env/
+ENV/
+
+# === IDE ===
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# === macOS ===
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# === 日志和临时文件 ===
+*.log
+*.tmp
+*.bak
+
+# === 版本归档（已打包，不需要重复提交） ===
+版本归档/*.zip
+
+# === 用户数据（不应提交到 Git） ===
+# Excel 收货登记文件（用户本地管理）
+*.xlsx
+*.xls
+*.csv
+
+# === 部署备份 ===
+.backup/

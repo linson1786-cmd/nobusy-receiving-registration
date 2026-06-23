@@ -1,0 +1,9 @@
+# 依赖清单 - 收货信息登记 Skill
+# 安装命令: pip install -r requirements.txt
+
+# === Excel 处理 ===
+openpyxl>=3.1.0
+
+# === 备注 ===
+# 1. 所有依赖均为开源免费软件
+# 2. Python 3.8+ required
