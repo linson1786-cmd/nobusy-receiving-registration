@@ -1,7 +1,7 @@
 ---
 name: receiving-registration
 description: 收货场景收货信息登记自动化工具。通过对话采集收货信息并写入本地Excel，支持单/多物品批量登记、表初始化、记录补正。
-version: 1.0.0
+version: V1.0
 agent_created: true
 trigger:
   - "收货登记"
@@ -114,13 +114,13 @@ trigger:
 
 1. 运行脚本获取下一个可用编号：
 ```bash
-python3 SKILL_DIR/scripts/receiving_excel.py next-number --file "<excel路径>" --date "<收货日期>"
+python3 SKILL_DIR/scripts/receiving-registration/receiving_excel.py next-number --file "<excel路径>" --date "<收货日期>"
 ```
 脚本返回当日下一个编号（如 `RG-20250115-001`）。多物品时自动获取递增编号。
 
 2. 将完整记录写入Excel：
 ```bash
-python3 SKILL_DIR/scripts/receiving_excel.py add --file "<excel路径>" --data '<JSON数据>'
+python3 SKILL_DIR/scripts/receiving-registration/receiving_excel.py add --file "<excel路径>" --data '<JSON数据>'
 ```
 
 JSON 数据格式（公共信息 + 物品明细列表）：
@@ -182,7 +182,7 @@ JSON 数据格式（公共信息 + 物品明细列表）：
 1. 询问用户：项目归属名称、Excel保存路径（默认 `~/收货登记/收货登记表_{主体简称}.xlsx`）
 2. 运行初始化脚本：
 ```bash
-python3 SKILL_DIR/scripts/receiving_excel.py init --file "<保存路径>" --company "<主体全称>"
+python3 SKILL_DIR/scripts/receiving-registration/receiving_excel.py init --file "<保存路径>" --company "<主体全称>"
 ```
 3. 脚本创建包含标准化表头的 Excel 文件（冻结首行、设置列宽、添加表头样式）
 4. 向用户确认初始化完成，展示表格路径和表头结构
@@ -194,13 +194,13 @@ python3 SKILL_DIR/scripts/receiving_excel.py init --file "<保存路径>" --comp
 1. 询问用户要修改的收货记录编号（如 `RG-20250115-001`）
 2. 查询该记录：
 ```bash
-python3 SKILL_DIR/scripts/receiving_excel.py query --file "<excel路径>" --number "RG-20250115-001"
+python3 SKILL_DIR/scripts/receiving-registration/receiving_excel.py query --file "<excel路径>" --number "RG-20250115-001"
 ```
 3. 向用户展示当前记录内容
 4. 询问用户要修改哪些字段
 5. 执行更新：
 ```bash
-python3 SKILL_DIR/scripts/receiving_excel.py update --file "<excel路径>" --number "RG-20250115-001" --data '<JSON更新数据>'
+python3 SKILL_DIR/scripts/receiving-registration/receiving_excel.py update --file "<excel路径>" --number "RG-20250115-001" --data '<JSON更新数据>'
 ```
 6. 向用户展示更新后的完整记录确认摘要
 
@@ -261,7 +261,7 @@ python3 SKILL_DIR/scripts/receiving_excel.py update --file "<excel路径>" --num
 |------|------|------|
 | `references/field_schema.md` | 参考文档 | 完整字段定义、数据类型、校验规则、物品类型判断逻辑 |
 | `references/company_registry.md` | 参考文档 | 主体列表（主账号+7家业务主体）、简称、Excel文件命名规范 |
-| `scripts/receiving_excel.py` | 脚本 | Excel 核心操作工具，支持 init/next-number/add/query/update/list-companies 子命令 |
+| `scripts/receiving-registration/receiving_excel.py` | 脚本 | Excel 核心操作工具，支持 init/next-number/add/query/update/list-companies 子命令 |
 
 ## 依赖安装
 

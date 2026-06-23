@@ -44,14 +44,39 @@ ENV/
 *.tmp
 *.bak
 
+# === 本地配置和密钥 ===
+config.py
+**/config.py
+**/.env
+**/.env.*
+*.pem
+*.key
+*.p12
+
 # === 版本归档（已打包，不需要重复提交） ===
 版本归档/*.zip
+版本归档/
+*.zip
+*.tar
+*.tar.gz
+*.7z
+
+# === 本地交付和历史源文件归档 ===
+# GitHub 仓库只保留当前源码和文档；交付压缩包走 GitHub Releases。
+交付包/
+源文件/
 
 # === 用户数据（不应提交到 Git） ===
 # Excel 收货登记文件（用户本地管理）
 *.xlsx
 *.xls
 *.csv
+*.pdf
+*.ofd
+*.jpg
+*.jpeg
+*.png
+downloads/
 
 # === 部署备份 ===
 .backup/

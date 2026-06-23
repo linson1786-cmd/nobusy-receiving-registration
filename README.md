@@ -37,7 +37,7 @@ pip install -r requirements.txt
 ### 2. 部署 Skill
 
 ```bash
-cd scripts
+cd scripts/receiving-registration
 python3 deploy.py
 ```
 
@@ -68,6 +68,7 @@ receiving-registration/
 │   ├── field_schema.md    # 字段定义、校验规则
 │   └── company_registry.md # 主体注册表
 ├── scripts/               # 核心脚本（开发工作目录）
+│   └── receiving-registration/
 │   ├── VERSION            # 当前版本 V1.0
 │   ├── CHANGELOG.md       # 变更日志
 │   ├── deploy.py          # 部署工具
@@ -94,11 +95,11 @@ receiving-registration/
 ### 发布新版本
 
 1. 在 `scripts/` 中修改代码
-2. 更新 `scripts/VERSION` 文件
-3. 更新 `scripts/CHANGELOG.md`
+2. 更新 `scripts/receiving-registration/VERSION` 文件
+3. 更新 `scripts/receiving-registration/CHANGELOG.md`
 4. 同步到 `源文件/V{version}/` 和 `交付包/V{version}/`
 5. 创建归档到 `版本归档/`
-6. 运行 `python3 scripts/deploy.py` 部署
+6. 运行 `python3 scripts/receiving-registration/deploy.py` 部署
 
 ---
 
