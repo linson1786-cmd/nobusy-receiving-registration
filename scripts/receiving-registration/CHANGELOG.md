@@ -1,5 +1,14 @@
 # 收货信息登记 Skill 变更日志
 
+## V1.1 - 2026-06-23
+
+### GitHub 在线升级
+
+- 新增 `deploy.py --check-update`，用于检查 GitHub 远程版本；
+- 新增 `deploy.py --upgrade`，用于从 GitHub 拉取最新版本并部署；
+- 修正标准仓库结构下的部署路径，脚本目录统一为 `scripts/receiving-registration/`；
+- 保持用户本地数据目录不受升级影响。
+
 ## V1.0 - 2026-06-23
 
 ### 初始发布

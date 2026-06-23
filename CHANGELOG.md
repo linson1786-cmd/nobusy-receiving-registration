@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.1.0 - 2026-06-23
+
+- Added GitHub-based update checks to the deployment tool.
+- Added `--upgrade` and `--check-update` command options.
+- Fixed deployment paths for the standardized `scripts/receiving-registration/` layout.
+
 ## v1.0.0 - 2026-06-23
 
 - Initial WorkBuddy Skill release for receiving registration.
